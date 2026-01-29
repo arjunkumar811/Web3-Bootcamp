@@ -1,0 +1,2 @@
+
+## Slides - [https://petal-estimate-4e9.notion.site/Class-1-History-of-blockchains-2ec7dfd10735807d8d97ee6aaf35d70d](https://petal-estimate-4e9.notion.site/Class-1-History-of-blockchains-2ec7dfd10735807d8d97ee6aaf35d70d)

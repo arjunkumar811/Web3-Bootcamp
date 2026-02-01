@@ -4,6 +4,31 @@ import { derivePath } from "ed25519-hd-key";
 import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import { HDNodeWallet, Mnemonic } from "ethers";
 
+
+const mnemoni = generateMnemonic();
+console.log('Mnemonic:',  mnemoni);
+
+const seed = mnemonicToSeedSync(mnemoni);
+for(let i = 0; i<=4; i++){
+const path = `m/44'/501'/${i}'/0'`;
+const derivedSeed = derivePath(path, seed.toString("hex")).key;
+const secret = nacl.sign.keyPair.fromSeed(derivedSeed).secretKey;
+console.log(Keypair.fromSecretKey(secret).publicKey.toBase58());
+}
+
+
+
+
+
+
+/*
+import nacl from "tweetnacl";
+import { generateMnemonic, mnemonicToSeedSync } from "bip39";
+import { derivePath } from "ed25519-hd-key";
+import { Keypair, Connection, LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { HDNodeWallet, Mnemonic } from "ethers";
+
+
 async function main() {
   const mnemonic = generateMnemonic();
   console.log("Generated Mnemonic:", mnemonic);
@@ -46,3 +71,7 @@ async function main() {
 }
 
 main();
+
+*/
+
+
